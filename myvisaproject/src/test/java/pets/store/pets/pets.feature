@@ -6,14 +6,14 @@ Feature: Scripts to test the Pets module
 
   Scenario: Post a new pet to the store
     Given path 'pet'
-    * def petsBody = read('classpath:examples/pets/requests/pets/pets_body.json')
+    * def petsBody = read('classpath:pets/store/pets/requests/pets_body.json')
     And request petsBody
     When method post
     Then status 200
 
   Scenario: Update an existing pet
     Given path 'pet'
-    * def petsBodyUpdate = read('classpath:examples/pets/requests/pets/pets_body_update.json')
+    * def petsBodyUpdate = read('classpath:pets/store/pets/requests/pets_body_update.json')
     And request petsBodyUpdate
     When method put
     Then status 200
@@ -33,9 +33,9 @@ Feature: Scripts to test the Pets module
 
   Scenario: Upload an image for a pet
     * def id = 3
-    Given multipart file myFile = { read: 'classpath:examples/pets/resources/karateImage.jpeg', filename: 'KarateImage.jpeg', contentType: 'application/octet-stream' }
+    Given multipart file myFile = { read: 'classpath:pets/store/pets/resources/karateImage.jpeg', filename: 'KarateImage.jpeg', contentType: 'application/octet-stream' }
     Given path 'pet/'+id+'/uploadImage'
-    * def petsBody = read('classpath:examples/pets/requests/pets/pets_body.json')
+    * def petsBody = read('classpath:pets/store/pets/requests/pets_body.json')
     And request petsBody
     When method post
     Then status 200
