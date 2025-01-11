@@ -1,0 +1,18 @@
+{
+  "id": 26,
+  "name": "doggie",
+  "category": {
+    "id": 1,
+    "name": "Dogs visa"
+  },
+  "photoUrls": [
+    "photo"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Grand Danes"
+    }
+  ],
+  "status": "available"
+}
